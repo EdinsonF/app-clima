@@ -1,0 +1,94 @@
+$morado: #32328c;
+$morado_claro: #7d69e5;
+$morado_blanco: #e0e7ef;
+$blanco: #fff;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: -0.10em;
+}
+
+h4{
+  font-size: 13px;
+}
+p{
+  font-size: 12px;
+}
+
+.mt-5{
+  margin-top: 5px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mt-15{
+  margin-top: 15px;
+}
+.ml-5{
+  margin-left: 5px;
+}
+.ml-10{
+  margin-left: 10px;
+}
+.ml-15{
+  margin-left: 15px;
+}
+.ml-20{
+  margin-left: 20px;
+}
+
+
+body{
+  background: $morado_blanco;
+  padding: 50px 100px;
+}
+
+.base_container-master{
+  background: $blanco;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns:  repeat(6, 1fr);
+  grid-template-rows:  repeat(8, 1fr);
+  grid-template-areas: 
+  "header   header    header    header    header    header"
+  "header   header    header    header    header    header"
+  "header   header    header    header    header    header"
+  "header   header    header    header    header    header"
+  "main     main      main      main      side      side"
+  "main     main      main      main      side      side"
+  "main     main      main      main      side      side"
+  "main     main      main      main      side      side"
+  
+}
+
+
+@media (max-width: 992px) {
+  
+  .base_container-master{
+    background: $blanco;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns:  repeat(6, 1fr);
+    grid-template-rows:  repeat(9, 1fr);
+    grid-template-areas: 
+    "header   header    header    header    header    header"
+    "header   header    header    header    header    header"
+    "header   header    header    header    header    header"
+    "main     main      main      main      main      main"
+    "main     main      main      main      main      main"
+    "main     main      main      main      main      main"
+    "side     side      side      side      side      side"
+    "side     side      side      side      side      side"
+    "side     side      side      side      side      side"
+
+    
+  }
+}
+
+
+
+
+

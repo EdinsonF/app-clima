@@ -1,0 +1,135 @@
+.main_container{
+  display: flex;
+  justify-content: space-between;
+  grid-area: main;
+  height: 280px;
+  width: 90%;
+  margin: 0px 5px 0px 40px;
+
+
+}
+
+.main_section{
+  @include box-card(column , space-between , 100% , 30%);
+
+
+  img {
+    @include image(15px);  
+  }
+}
+
+.main_container .main_section:nth-child(2){
+  margin-left: 20px;
+}
+.main_container .main_section:nth-child(3){
+  margin-right: 0px;
+}
+
+
+
+
+
+.main_section-title{
+  display: flex;
+  align-items: center;
+  
+}
+
+.main_card{
+  @include box-card(row , space-between , 60px , 100%);
+  border: 1px solid darken($color: $blanco, $amount: 5);
+  align-items: center;
+
+}
+.main_card-left{
+  font-size: 26px;
+  color: $morado_claro;
+}
+.main_card-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+
+ 
+}
+
+.main_card-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $morado_blanco;
+  height: 100%;
+  width: 50px;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 14px;
+  
+}
+.main_section-content{
+  margin-bottom: 20px;
+}
+.main_section-content article:nth-child(1){
+  .main_card-right{
+    background: $morado_claro;
+    color: $blanco;
+  }  
+}
+
+
+.main_card-image{
+  @include box-card(row , space-between , 200px , 100%);
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+
+  img{
+    grid-column: 1/6;
+    grid-row: 1/6;
+  }
+
+  .image-title{
+    @include imageTitle;
+  }
+ 
+}
+
+
+
+.main_card-image1{
+  @include box-card(row , space-between , 60px , 100%);
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+
+  img{
+    grid-column: 1/6;
+    grid-row: 1/6;
+  }
+  .image-title{
+    @include imageTitle;
+  }
+}
+
+.main_card-image2{
+  @include box-card(row , space-between , 110px , 100%);
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+
+  img{
+    grid-column: 1/6;
+    grid-row: 1/6;
+  }
+  .image-title{
+    @include imageTitle;
+  }
+  margin-top: 30px;
+}
+
+
+
+@media (max-width: 992px) {
+
+  .main_container{
+    margin-right: 40px;
+  }
+}
+
