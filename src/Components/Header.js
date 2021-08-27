@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../images/icono.png'
+import nav from '../images/nav.jpg'
+
+import {climaContext} from './context/ClimaProvider';
 
 const Header = () => {
+
+  const {bogotaDay} = useContext(climaContext);
+
+  const {name , temp, icon} = bogotaDay;
   return (
 
     <>
-    <div class="header_widget">
+    <div className="header_widget">
       <div className="header_tab">
-        <div class="tab--icon"><i class="fas fa-cloud-sun-rain"></i></div>
-        <div class="tab--grados"><h1>32</h1><p>°C</p></div>
+        <div className="tab--icon">
+        <img src={`images/${icon}.png`} alt="" />
+        </div>
+        <div className="tab--grados">
+          <h1>{Math.ceil(temp - 273)}</h1>
+          <p>°C</p>
+        </div>
       </div>
     </div>
     <div className="header_container">
@@ -16,15 +28,15 @@ const Header = () => {
           
         <div className="header_marco">
           <div className="header_title">
-          <i class="fas fa-map-marker-alt"></i>
-          <span> Bogotá</span>
+            <i className="fas fa-map-marker-alt"></i>
+            <span> {name}</span>
           </div>
          <div className="header_logo">
           <img src={logo} alt="" />
          </div>
           
         </div>
-          <img src="https://i.pinimg.com/474x/93/96/49/93964951445a4b034e1b957db5937997.jpg" alt="" />
+          <img src={nav} alt="" />
         </div>
     </div>
     </>
