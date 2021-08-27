@@ -4,15 +4,11 @@
   grid-area: main;
   height: 280px;
   width: 90%;
-  margin: 0px 5px 0px 40px;
-
-
+  margin: 50px 5px 0px 40px;
 }
 
 .main_section{
   @include box-card(column , space-between , 100% , 30%);
-
-
   img {
     @include image(15px);  
   }
@@ -22,36 +18,32 @@
   margin-left: 20px;
 }
 .main_container .main_section:nth-child(3){
-  margin-right: 0px;
+  margin-right: 5px;
 }
-
-
-
-
 
 .main_section-title{
   display: flex;
-  align-items: center;
-  
+  align-items: center; 
 }
 
 .main_card{
   @include box-card(row , space-between , 60px , 100%);
   border: 1px solid darken($color: $blanco, $amount: 5);
   align-items: center;
+}
 
-}
 .main_card-left{
-  font-size: 26px;
-  color: $morado_claro;
+  height: 100%;
+  img{
+    height: 60px;
+  }
 }
+
 .main_card-center{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
-
- 
 }
 
 .main_card-right{
@@ -63,12 +55,13 @@
   width: 50px;
   padding: 5px;
   border-radius: 15px;
-  font-size: 14px;
-  
+  font-size: 14px; 
 }
+
 .main_section-content{
   margin-bottom: 20px;
 }
+
 .main_section-content article:nth-child(1){
   .main_card-right{
     background: $morado_claro;
@@ -81,25 +74,19 @@
   @include box-card(row , space-between , 200px , 100%);
   display: grid;
   grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-
   img{
     grid-column: 1/6;
     grid-row: 1/6;
   }
-
   .image-title{
     @include imageTitle;
   }
- 
 }
-
-
 
 .main_card-image1{
   @include box-card(row , space-between , 60px , 100%);
   display: grid;
   grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-
   img{
     grid-column: 1/6;
     grid-row: 1/6;
@@ -113,7 +100,6 @@
   @include box-card(row , space-between , 110px , 100%);
   display: grid;
   grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-
   img{
     grid-column: 1/6;
     grid-row: 1/6;
@@ -122,14 +108,75 @@
     @include imageTitle;
   }
   margin-top: 30px;
+
+  .main_card-addbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $morado_claro;
+    grid-column: 4/6;
+    grid-row: 1/6;
+    order: 10;
+    border-radius: 15px;
+    font-size: 30PX;
+    color: $morado_blanco;
+  }
+}
+
+.main_container > div:nth-child(3){
+  .main_section-title{
+    justify-content: space-between;
+  }
+}
+
+.profile > img {
+  @include image(5px, 15px);
+  margin-left: 2px;
 }
 
 
 
+/* MEDIA */
 @media (max-width: 992px) {
-
   .main_container{
-    margin-right: 40px;
+  justify-content: space-evenly;
+  margin: 10px 35px 0px 35px;
+  width: auto;
+  }
+  .main_container .main_section:nth-child(2){
+    margin-left: 0px;
+  }
+  .main_container .main_section:nth-child(3){
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_container{
+    flex-direction: column;
+    grid-area: main;
+    align-items: stretch;
+    margin: 10px 35px 0px 35px;
+    height: 650px;
+    width: auto;
+  }
+
+  .main_container .main_section:nth-child(2){
+    margin-left: 0px;
+  }
+  .main_container .main_section:nth-child(3){
+    margin-right: 0px;
+  }
+
+  .main_section{
+    @include box-card(column , space-between , 100% , 100%);
+    .main_card-image> img {
+      @include image(15px);  
+    }
+  }
+
+  .main_card-addbtn{
+    margin-left: 50PX; 
   }
 }
 

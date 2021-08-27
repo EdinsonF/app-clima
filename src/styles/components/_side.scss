@@ -1,9 +1,8 @@
 .side_container{
   grid-row: 3 / 11;
   grid-column: 5/7;
-  margin: 5px 40px 0px 5px;
+  margin: 0 40px 0px 5px;
   height: 455px;
-  border: 1px solid black;
 }
 
 .side_section{
@@ -11,13 +10,12 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  padding: 50px 40px 10px 0;
+  padding: 0px 40px 10px 0;
 }
 
 .side_card{
   @include box-card(column , space-between , 24% , 100%); 
   box-shadow: 0px 50px 44px -10px #cccccc;
-
   .bar{
     border-left: 1px solid darken($color: $blanco, $amount: 15);
     height: 40px;
@@ -46,8 +44,11 @@
   width: 30%;
   height: 60px;
   border-radius: 15px;
-  font-size: 32px;
-  color: $morado_claro;
+
+  img{
+    object-fit: cover;
+    width: 70px
+  }
 }
 
 .side_card-add{
@@ -57,7 +58,7 @@
   border-color: darken($color: $blanco, $amount: 6);
   margin-bottom: 15PX;
   cursor:pointer;
-
+  color: $morado_claro;
 
   span{
     display: flex;
@@ -69,37 +70,61 @@
     border-radius: 15px;
     font-size: 12px;
   }
+
+  i{
+    font-size: 60px;
+    color: darken($color: $morado_blanco, $amount: 15) ;
+
+  }
 }
 
 
+/* MEDIA */
 @media (max-width: 992px) {
-  
   .side_container{
     grid-row: 7 / 11;
     grid-column: 1/7;
-    margin: 5px 40px 0px 5px;
-    height: 255px;
-    border: 1px solid black;
+    margin: 5px 40px 0px 40px;
+    height: 200px;
   }
 
-  .side_section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  .side_section{ 
+    align-items: center;
+    flex-wrap: wrap;  
     height: 100%;
     padding: 0px 0px 0px 0;
   }
 
   .side_card{
-    @include box-card(column , space-between , 35% , 100%); 
-    box-shadow: 0px 50px 44px -10px #cccccc;
+    @include box-card(column , space-between , 40% , 40%); 
+  }
   
-    .bar{
-      border-left: 1px solid darken($color: $blanco, $amount: 15);
-      height: 40px;
-      padding-left: 10px;
-      
-    }
+  .side_card-add{
+    @include box-card(column , space-evenly , 65% , 45%);
+    margin-bottom: 0PX; 
+  }
+}
+
+@media (max-width: 768px) { 
+  .side_container{
+    grid-row: 10 / 13;
+    grid-column: 1/7;
+    margin: 5px 40px 10px 40px;
+    height: 350px;
+  }
+
+  .side_section{
+    display: flex;
+    flex-direction: row;
+    height: 100%;  
+  }
+  
+  .side_card{
+    @include box-card(column , space-between , 24% , 80%); 
+  }
+
+  .side_card-add{
+    @include box-card(column , space-evenly , 32% , 80%);
   }
   
 }

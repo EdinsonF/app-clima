@@ -25,11 +25,12 @@
   margin-left: 3%;
   color: $morado_blanco;
   font-size: 20px;
+  padding-top: 20px;
   
 }
 
 .header_logo{
-  width: 80px;
+  width: 70px;
   img {
     @include image;
   }
@@ -40,18 +41,13 @@
   width: 60%;
   flex-direction: row;
   justify-content: space-evenly;
-  
   i{
-    font-size: 16px;
+    font-size: 18px;
   }
   span{
-    font-size: 24px;
+    font-size: 28px;
   }
 }
-
-
-
-
 
 .header_widget{
   display: grid;
@@ -59,36 +55,51 @@
   grid-column: 1/2;
   grid-row:  1 / 5;
   margin-right: 26px;
- 
+  padding-top: 15px;
 }
+
 .header_tab{
   width: 80px;
   height: 160px;
   grid-column: 1/5;
-  grid-row: 4/9;
+  grid-row: 3/8;
   background: $morado_claro;
   border-radius: 20px;
   z-index: 10;
-  
-
-
 }
 
 .tab--icon{
-  height: 85px;
-  font-size: 35px;
-  padding: 20px 0px 0px 18px;
   background: $morado;
   border-radius: 20px;
-  color: $morado_blanco;
+  img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
+
 .tab--grados{
   display: flex;
   padding: 15px 0px 0px 20px;
   color: $morado_blanco;
   font-size: 16px;
+}
 
 
+
+
+/* MEDIA */
+@media (max-width: 992px) {
+  .header_widget{
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header_widget{  
+    padding-top: 18px; 
+    grid-row:  1 / 4;
+  }
 }
 
 
