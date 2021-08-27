@@ -12,8 +12,15 @@ function SideCard({city}) {
               <div className="side_card-icon">
                 <img src={`images/${icon}.png`} alt="" />
               </div>
-              <h2 className="mt-15 ml-15">{Math.ceil(temp - 273)} ° &#7580;</h2>
-              <div className="bar mt-15 ml-10"><h1 >{name}</h1><p>{country}</p></div>
+              <div className="grados mt-15 ">
+              <h2 >
+                  {Math.ceil(temp - 273)}
+              </h2> 
+              <div className="notation">
+                ° &#7580;
+              </div>
+              </div>
+              <div className="bar mt-15 "><h1 >{name}</h1><p>{country}</p></div>
             </div>
 
             <div className="side_card-buttom mb-10">

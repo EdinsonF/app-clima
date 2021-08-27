@@ -1,3 +1,14 @@
+/* 
+180,00
+50,84
+-39,74
+
+
+37
+12
+34
+*/
+
 .header_container{
   grid-area: header; 
   margin: 50px 40px 0px 40px; 
@@ -49,14 +60,26 @@
   }
 }
 
-.header_widget{
-  display: grid;
-  grid-template: repeat(10, 1fr) / repeat(5, 1fr);
-  grid-column: 1/2;
-  grid-row:  1 / 5;
-  margin-right: 26px;
-  padding-top: 15px;
+.header_widget-borderTop{
+background: #0f0f0f00;
+width: 30px;
+height: 70px;
+border-bottom-left-radius: 10px;
+position: absolute;
+box-shadow: 0px 31px 0px 0px #32328c;
+z-index: 20;
 }
+.header_widget-borderButtom{
+  background: #ffffff00;
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 10px;
+  position: absolute;
+  box-shadow: 0px -20px 0px 0px $morado_claro;
+  margin-top: 230px;
+  z-index: 10;
+}
+
 
 .header_tab{
   width: 80px;
@@ -64,17 +87,31 @@
   grid-column: 1/5;
   grid-row: 3/8;
   background: $morado_claro;
-  border-radius: 20px;
+  border-radius: 15px;
   z-index: 10;
+  position: absolute;
+  margin-top: 70px;
+  
+  @include shadow(rgba(53, 51, 51, 0.815));
 }
 
 .tab--icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: $morado;
-  border-radius: 20px;
+  border-radius: 15px;
   img{
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+
+  span{
+    position: absolute;
+    margin-top: 58px;
+    color: $morado_blanco;
+    font-size: 12px;
   }
 }
 
@@ -83,6 +120,8 @@
   padding: 15px 0px 0px 20px;
   color: $morado_blanco;
   font-size: 16px;
+  border-radius: 15px;
+
 }
 
 

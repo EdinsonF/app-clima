@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import  {useEffect, useState} from 'react'
 
 function ClimaNextDay() {
   
@@ -12,31 +12,28 @@ function ClimaNextDay() {
 
     client.addEventListener('load', (data) => {
     const result = JSON.parse(data.currentTarget.responseText);
+    //extraemos 3 dias
     const nextThreePartials = result.daily.slice(1, 4) 
-    
-   const nextThreeDay=  nextThreePartials.map((day) => {
-      return {
-        day         : day?.dt,
-        tempMax     : day?.temp.max,
-        tempMin     : day?.temp.min,
-        weather     : day?.weather[0].main,
-        icon        : day?.weather[0].icon
-      }
-    })
+    //datos a utilizar
+    const nextThreeDay=  nextThreePartials.map((day) => {
+        return {
+          day         : day?.dt,
+          tempMax     : day?.temp.max,
+          tempMin     : day?.temp.min,
+          weather     : day?.weather[0].main,
+          icon        : day?.weather[0].icon
+        }
+      })
 
-
-    setClimaCiudad(nextThreeDay)
-
-   
-    })
+      setClimaCiudad(nextThreeDay)
+ 
+      })
 
     
     client.send();
   }, [URL])
   
-  if(climaCiudad.length > 1){
-    return climaCiudad;
-  }
+  
   return climaCiudad;
 }
 

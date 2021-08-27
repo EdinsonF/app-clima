@@ -10,23 +10,42 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  padding: 0px 40px 10px 0;
+  padding: 0px 30px 10px 0;
 }
 
 .side_card{
   @include box-card(column , space-between , 24% , 100%); 
-  box-shadow: 0px 50px 44px -10px #cccccc;
-  .bar{
-    border-left: 1px solid darken($color: $blanco, $amount: 15);
-    height: 40px;
-    padding-left: 10px;
-    
-  }
+  @include shadow;
+  
 }
 
 .side_card-top{
   display: flex;
   flex-direction: row;
+
+  .bar{
+    width: 58px;
+    border-left: 1px solid darken($color: $blanco, $amount: 15);
+    padding-left: 6%;
+    word-wrap: break-word;
+   
+    h1{
+      font-size: 14px;
+    }
+  }
+  .grados{
+    display: flex;
+    min-width: 75px;
+    justify-content: center;
+    padding-left: 10px;
+    
+    h2{
+      margin-right: 2px;
+    }
+
+  }
+ 
+  
 }
 
 .side_card-buttom{
@@ -47,7 +66,7 @@
 
   img{
     object-fit: cover;
-    width: 70px
+    width: 60px
   }
 }
 

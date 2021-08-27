@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import SideCard from './SideCard'
-import map from '../../images/map.ico'
 import {climaContext} from '../context/ClimaProvider';
 
 function Side() {
@@ -20,7 +19,7 @@ function Side() {
 
           <article className="side_card-add">    
               <span><h3>Add Location</h3></span> 
-              <i class="fas fa-map-marked"></i>    
+              <i className="fas fa-map-marked"></i>    
           </article>
         </section>
     </div>

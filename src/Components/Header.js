@@ -7,22 +7,27 @@ import {climaContext} from './context/ClimaProvider';
 const Header = () => {
 
   const {bogotaDay} = useContext(climaContext);
-
-  const {name , temp, icon} = bogotaDay;
+  const {name , temp, icon, weather} = bogotaDay;
   return (
 
     <>
-    <div className="header_widget">
+
+
+    <div className="header_widget-borderTop"></div>
       <div className="header_tab">
         <div className="tab--icon">
         <img src={`images/${icon}.png`} alt="" />
+        <span>{weather}</span>
         </div>
         <div className="tab--grados">
           <h1>{Math.ceil(temp - 273)}</h1>
           <p>°C</p>
         </div>
       </div>
-    </div>
+    <div className="header_widget-borderButtom"></div>
+    
+  
+
     <div className="header_container">
         <div className="header_image">
           

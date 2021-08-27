@@ -14,7 +14,7 @@ function ClimaProvider({children}) {
 
   const paris_caracas = [parisDay, caracasDay]
   
-  
+  //retornar null si pending es true para que no envie childrens vacios
   if(pending || pending2 || pending3) return null;
 
   return (

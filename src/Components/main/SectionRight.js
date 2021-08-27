@@ -2,7 +2,8 @@ import React from 'react'
 import pf1 from '../../images/profile1.jpg';
 import pf2 from '../../images/profile2.jpg';
 import pf3 from '../../images/profile3.jpg';
-import pf4 from '../../images/profile4.jpg';
+import main3 from '../../images/main3-origin.jpg'
+import main2 from '../../images/main2-origin.jpg'
 
 function SectionRight() {
   return (
@@ -13,7 +14,7 @@ function SectionRight() {
               <img src={pf1} alt="" />
               <img src={pf2} alt="" />  
               <img src={pf3} alt="" />  
-              <img src={pf4} alt="" />  
+              <div>6+</div>  
             </span>
           </div>
             <div className="main_section-content">
@@ -25,7 +26,7 @@ function SectionRight() {
                   <span>Singapure</span>
                   </div>
               </div>
-                <img src="http://www.krisporelmundo.com/wp-content/uploads/2016/05/image-6.jpg" alt="" />
+                <img src={main2} alt="" />
               </div>
               
               <div className="main_card-image2 mt-20">
@@ -39,7 +40,7 @@ function SectionRight() {
                 <div className="main_card-addbtn">
                   +
                 </div>
-                <img src="https://s1.best-wallpaper.net/wallpaper/m/1712/City-park-night-beautiful-holiday-lights_m.jpg" alt="" />
+                <img src={main3} alt="" />
               </div>
             </div>
         </div>
